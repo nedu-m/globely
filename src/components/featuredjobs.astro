@@ -1,0 +1,92 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+---
+
+<div class="bg-black py-10 rounded-lg mb-24">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-semibold text-white mb-6">
+      Featured Job Listings
+    </h2>
+
+    <!-- Job Card Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Featured Job Card 1 -->
+      <div class="relative bg-white rounded-lg shadow-lg group overflow-hidden">
+        <img
+          src="job1-image.jpg"
+          alt="Job 1"
+          class="w-full h-32 object-cover rounded-t-lg"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Job Title 1</h3>
+          <p class="text-sm text-gray-600 mb-2">Company Name 1</p>
+          <p class="text-sm text-gray-600">Location 1</p>
+        </div>
+        <!-- Apply Button -->
+        <div
+          class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100">
+          <a
+            href="#apply-link-1"
+            class="text-white font-medium hover:underline text-sm flex items-center">
+            Apply <i class="fas fa-external-link-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Featured Job Card 2 -->
+      <div class="relative bg-white rounded-lg shadow-lg group overflow-hidden">
+        <img
+          src="job2-image.jpg"
+          alt="Job 2"
+          class="w-full h-32 object-cover rounded-t-lg"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Job Title 2</h3>
+          <p class="text-sm text-gray-600 mb-2">Company Name 2</p>
+          <p class="text-sm text-gray-600">Location 2</p>
+        </div>
+        <!-- Apply Button -->
+        <div
+          class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100">
+          <a
+            href="#apply-link-2"
+            class="text-white font-medium hover:underline text-sm flex items-center">
+            Apply <Icon name="lucide:arrow-up-right" class="w-5 h-5 mr-2" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Featured Job Card 3 -->
+      <div class="relative bg-white rounded-lg shadow-lg group overflow-hidden">
+        <img
+          src="job3-image.jpg"
+          alt="Job 3"
+          class="w-full h-32 object-cover rounded-t-lg"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Job Title 3</h3>
+          <p class="text-sm text-gray-600 mb-2">Company Name 3</p>
+          <p class="text-sm text-gray-600">Location 3</p>
+        </div>
+        <!-- Apply Button -->
+        <div
+          class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100">
+          <a
+            href="#apply-link-3"
+            class="text-white font-medium hover:underline text-sm flex items-center">
+            Apply <i class="fas fa-external-link-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Jobs Button -->
+    <div class="text-center mt-6">
+      <a
+        href="/job-listings"
+        class="text-white font-medium hover:underline text-sm">View More Jobs</a
+      >
+    </div>
+  </div>
+</div>

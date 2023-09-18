@@ -1,0 +1,141 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+---
+
+<div
+  class="relative bg-white rounded-lg p-6 mb-20 shadow-lg border border-gray-200">
+  <!-- Search Bar and Filters Container -->
+  <div class="grid grid-cols-1 gap-4 xl:grid-cols-1 grid-rows-auto">
+    <!-- Keyword Search -->
+    <div class="mb-2 xl:mb-0">
+      <label for="search" class="text-gray-700 font-bold flex items-center">
+        <Icon name="fe:search" class="w-5 h-5 mr-2" />
+        Keyword
+      </label>
+      <div class="flex items-center">
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Enter keywords"
+          class="w-full p-2 border rounded-md focus:outline-none focus:border-gray-400"
+        />
+        <div class="pl-2">
+          <!-- Replace with your icon, e.g., Feather Icons -->
+          <i class="feather icon-search text-gray-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Options (Category, Location, Job Type, Job Level) -->
+    <div class="grid grid-cols-2 gap-4 flex-grow">
+      <!-- Category Dropdown -->
+      <div class="mb-2">
+        <label for="category" class="text-gray-700 font-bold flex items-center">
+          <Icon name="carbon:grid" class="w-5 h-5 mr-2" />
+          Category
+        </label>
+        <div class="flex items-center">
+          <select
+            id="category"
+            name="category"
+            class="w-full p-2 border rounded-md focus:outline-none focus:border-gray-400">
+            <option value="">All Categories</option>
+            <!-- Add category options dynamically from your database -->
+            <option value="it">IT</option>
+            <option value="marketing">Marketing</option>
+            <!-- Add more options as needed -->
+          </select>
+          <div class="pl-2">
+            <!-- Replace with your icon, e.g., Feather Icons -->
+            <i class="feather icon-chevron-down text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location Dropdown -->
+      <div class="mb-2">
+        <label for="location" class="text-gray-700 font-bold flex items-center">
+          <Icon name="tabler:location" class="w-5 h-5 mr-2" />
+          Location
+        </label>
+        <div class="flex items-center">
+          <select
+            id="location"
+            name="location"
+            class="w-full p-2 border rounded-md focus:outline-none focus:border-gray-400">
+            <option value="">All Locations</option>
+            <!-- Add location options dynamically from your database -->
+            <option value="onsite">Onsite</option>
+            <option value="remote">Remote</option>
+            <option value="international">International Remote</option>
+            <!-- Add more options as needed -->
+          </select>
+          <div class="pl-2">
+            <!-- Replace with your icon, e.g., Feather Icons -->
+            <i class="feather icon-chevron-down text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Type Dropdown -->
+      <div class="mb-2">
+        <label for="jobType" class="text-gray-700 font-bold flex items-center">
+          <Icon name="radix-icons:target" class="w-5 h-5 mr-2" />
+          Job Type
+        </label>
+        <div class="flex items-center">
+          <select
+            id="jobType"
+            name="jobType"
+            class="w-full p-2 border rounded-md focus:outline-none focus:border-gray-400">
+            <option value="">All Job Types</option>
+            <!-- Add job type options dynamically from your database -->
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <!-- Add more options as needed -->
+          </select>
+          <div class="pl-2">
+            <!-- Replace with your icon, e.g., Feather Icons -->
+            <i class="feather icon-chevron-down text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Level Dropdown -->
+      <div>
+        <label for="jobLevel" class="text-gray-700 font-bold flex items-center">
+          <Icon name="lucide:trending-up" class="w-5 h-5 mr-2" />
+          Job Level
+        </label>
+        <div class="flex items-center">
+          <select
+            id="jobLevel"
+            name="jobLevel"
+            class="w-full p-2 border rounded-md focus:outline-none focus:border-gray-400">
+            <option value="">All Job Levels</option>
+            <!-- Add job level options dynamically from your database -->
+            <option value="entry-level">Entry-level</option>
+            <option value="mid">Mid</option>
+            <option value="senior">Senior</option>
+            <!-- Add more options as needed -->
+          </select>
+          <div class="pl-2">
+            <!-- Replace with your icon, e.g., Feather Icons -->
+            <i class="feather icon-chevron-down text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Button -->
+  <div class="text-center pt-8">
+    <button
+      class="bg-black hover:bg-slate text-white font-bold py-2 px-4 rounded-lg w-full transition-colors duration-300 focus:outline-none focus:shadow-outline-blue active:bg-slate"
+      type="button">
+      Search
+    </button>
+  </div>
+</div>
