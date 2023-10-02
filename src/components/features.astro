@@ -42,28 +42,32 @@ const jobFeatures = [
 ];
 ---
 
-<div class="mt-8">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Jobs tailored to your preferences
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Our platform empowers you to find the perfect job that aligns with your
-    skills, aspirations, and career goals.
-  </p>
-</div>
+<div class="mb-20">
+  <div class="mt-8 pb-8">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Jobs tailored to your preferences
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      Our platform empowers you to find the perfect job that aligns with your
+      skills, aspirations, and career goals.
+    </p>
+  </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-8 gap-8">
-  {
-    jobFeatures.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-8 gap-8">
+    {
+      jobFeatures.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+            <Icon class="text-white" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </div>

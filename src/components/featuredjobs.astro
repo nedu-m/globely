@@ -1,106 +1,40 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon";
-import salesImg from "@assets/sales.png";
-import { Image } from "astro:assets";
+import JobCard from "./ui/jobCard.astro";
+import Link from "./ui/link.astro";
+import jobImg1 from "@assets/sales.png";
+import jobImg2 from "@assets/sales2.jpeg";
 ---
 
-<div class="bg-black py-10 px-4 rounded-lg mb-16 md:mb-32">
+<div class="bg-black py-12 px-4 rounded-lg mb-16 md:mb-20">
   <div class="container mx-auto px-4">
-    <div class="flex justify-between items-center mb-8">
-      <h2 class="text-2xl font-semibold text-white">Featured Jobs</h2>
+    <div
+      class="flex md:justify-between items-start gap-5 mb-8 flex-col md:flex-row">
+      <h2 class="text-2xl font-semibold text-white">Featured Jobs✨</h2>
       <!-- Feature Your Jobs Button -->
-      <a
-        href="/feature-your-jobs"
-        class="bg-white text-black px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-200 hover:text-black transition duration-300 ease-in-out">
-        Feature Your Jobs
-      </a>
+      <Link href="#" style="outline">Feature Your Jobs</Link>
     </div>
 
     <!-- Job Card Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <!-- Featured Job Card 1 -->
-      <div class="relative bg-white rounded-lg shadow-lg group overflow-hidden">
-        <img
-          src={salesImg.src}
-          alt="Job 1"
-          class="w-full h-32 object-cover rounded-t-lg"
-        />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">
-            Frontend Engineer
-          </h3>
-          <p class="text-sm text-gray-600 mb-2">Melkins</p>
-          <p class="text-sm text-gray-600">Remote</p>
-        </div>
-        <!-- Apply Button -->
-        <div
-          class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100">
-          <a
-            href="#apply-link-2"
-            class="text-white font-medium hover:underline text-sm flex items-center">
-            Apply <Icon name="lucide:arrow-up-right" class="w-5 h-5 mr-2" />
-          </a>
-        </div>
-      </div>
+      <JobCard
+        imageSrc={jobImg1.src}
+        altText="Job 1"
+        title="Frontend Engineer"
+        company="Melkins"
+        location="Remote"
+        applyLink="#apply-link-1"
+      />
 
-      <!-- Featured Job Card 2 -->
-      <div class="relative bg-white rounded-lg shadow-lg group overflow-hidden">
-        <img
-          src={salesImg.src}
-          alt="Job 1"
-          class="w-full h-32 object-cover rounded-t-lg"
-        />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">
-            Frontend Engineer
-          </h3>
-          <p class="text-sm text-gray-600 mb-2">Melkins</p>
-          <p class="text-sm text-gray-600">Remote</p>
-        </div>
-        <!-- Apply Button -->
-        <div
-          class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100">
-          <a
-            href="#apply-link-2"
-            class="text-white font-medium hover:underline text-sm flex items-center">
-            Apply <Icon name="lucide:arrow-up-right" class="w-5 h-5 mr-2" />
-          </a>
-        </div>
-      </div>
-
-      <!-- Featured Job Card 3 -->
-      <div class="relative bg-white rounded-lg shadow-lg group overflow-hidden">
-        <img
-          src={salesImg.src}
-          alt="Job 1"
-          class="w-full h-32 object-cover rounded-t-lg"
-        />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">
-            Frontend Engineer
-          </h3>
-          <p class="text-sm text-gray-600 mb-2">Melkins</p>
-          <p class="text-sm text-gray-600">Remote</p>
-        </div>
-        <!-- Apply Button -->
-        <div
-          class="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100">
-          <a
-            href="#apply-link-2"
-            class="text-white font-medium hover:underline text-sm flex items-center">
-            Apply <Icon name="lucide:arrow-up-right" class="w-5 h-5 mr-2" />
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- View More Jobs Button -->
-    <div class="text-center mt-6">
-      <a
-        href="/job-listings"
-        class="text-white font-medium hover:underline text-sm">View More Jobs</a
-      >
+      <JobCard
+        imageSrc={jobImg2.src}
+        altText="Job 1"
+        title="Frontend Engineer"
+        company="Melkins"
+        location="Remote"
+        applyLink="#apply-link-1"
+      />
     </div>
   </div>
 </div>

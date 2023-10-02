@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  imageSrc: string;
+  altText: string;
+  title: string;
+  company: string;
+  location: string;
+  applyLink: string;
+}
+
+const { imageSrc, altText, title, company, location, applyLink }: Props =
+  Astro.props;
+
+const sizes = {
+  lg: "w-full h-32 object-cover rounded-t-lg",
+};
+
+const cardStyles = {
+  card: "relative bg-white rounded-lg shadow-lg group overflow-hidden",
+  text: "text-lg font-semibold text-gray-800 mb-2",
+  companyLocation: "text-sm text-gray-600 mb-2",
+  location: "text-sm text-gray-600",
+  applyButtonContainer:
+    "absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100",
+  applyButton:
+    "text-white font-medium hover:underline text-sm flex items-center",
+};
+---
+
+<div class={cardStyles.card}>
+  <img src={imageSrc} alt={altText} class={sizes.lg} />
+  <div class="p-4">
+    <h3 class={cardStyles.text}>{title}</h3>
+    <p class={cardStyles.companyLocation}>{company}</p>
+    <p class={cardStyles.location}>{location}</p>
+  </div>
+  <!-- Apply Button -->
+  <div class={cardStyles.applyButtonContainer}>
+    <a href={applyLink} class={cardStyles.applyButton}>
+      View Job <Icon name="lucide:arrow-up-right" class="w-5 h-5 mr-2" />
+    </a>
+  </div>
+</div>
