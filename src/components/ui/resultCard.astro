@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon";
+
+interface JobResultProps {
+  logoSrc: string;
+  title: string;
+  companyName: string;
+  postingDate: string;
+  location: string;
+  typeLevel: string;
+  applyLink: string;
+}
+
+const {
+  logoSrc,
+  title,
+  companyName,
+  postingDate,
+  location,
+  typeLevel,
+  applyLink,
+}: JobResultProps = Astro.props;
+
+const cardStyles = {
+  card: "flex flex-col md:flex-row bg-white rounded-lg mb-4 p-4 border border border-gray-100",
+  logo: "flex md:self-center relative w-16 h-16 object-contain mr-4 rounded-xl",
+  content: "flex-grow",
+  title: "text-lg font-semibold text-gray-800 mt-1 mb-1",
+  info: "text-sm text-gray-600 mb-1",
+  applyButtonContainer:
+    "flex md:self-center bg-black transition-opacity group-hover:opacity-100 rounded-sm",
+  applyButton:
+    "text-white font-medium hover:underline text-sm justify-center flex  flex-grow items-center p-2",
+};
+---
+
+<div class={cardStyles.card}>
+  <div class={cardStyles.logo}>
+    <img src={logoSrc} alt="Company Logo" class="rounded-md" />
+  </div>
+  <div class={cardStyles.content}>
+    <h3 class={cardStyles.title}>{title}</h3>
+    <p class={cardStyles.info}>
+      {companyName} • {postingDate}
+    </p>
+    <p class={cardStyles.info}>
+      {location} • {typeLevel}
+    </p>
+  </div>
+  <!-- Apply Button -->
+  <div class={cardStyles.applyButtonContainer}>
+    <a href={applyLink} class={cardStyles.applyButton}>
+      Apply <Icon name="lucide:arrow-up-right" class="w-5 h-5 ml-2" />
+    </a>
+  </div>
+</div>

@@ -1,65 +1,64 @@
-<div class="grid grid-cols-1 gap-4 xl:grid-cols-2 grid-rows-auto">
-  <!-- Job Listing 1 -->
-  <div class="bg-white rounded-lg p-4 shadow-md border border-gray-200 flex">
-    <!-- Left Side (Logo and Mini Details) -->
-    <div class="flex-shrink-0 mr-4">
-      <!-- Logo (You can replace 'company-logo-1.png' with the actual URL) -->
-      <img
-        src="company-logo-1.png"
-        alt="Company Logo 1"
-        class="w-16 h-16 rounded-full object-cover"
-      />
-    </div>
-    <div class="flex-grow">
-      <h2 class="text-lg font-semibold text-gray-800">Job Title 1</h2>
-      <p class="text-gray-600">Company Name 1</p>
-      <p class="text-gray-600">Location: Onsite</p>
-      <p class="text-gray-600">Full-time</p>
-      <p class="text-gray-600">Job Level: Mid</p>
-      <p class="text-gray-600">Salary Range: $50,000 - $70,000</p>
-      <p class="text-gray-600">Application Deadline: January 31, 2024</p>
-      <!-- Add more mini details here as needed -->
-    </div>
-    <!-- Right Side (Apply Button) -->
-    <div class="flex-shrink-0 flex justify-center items-center">
-      <button
-        class="bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-slate transition-colors duration-300 focus:outline-none focus:shadow-outline-blue active:bg-slate"
-        type="button">
-        Apply Now
-      </button>
-    </div>
-  </div>
+---
+import ResultCard from "./ui/resultCard.astro";
+import Logo from "@assets/sales.png";
 
-  <!-- Job Listing 2 -->
-  <div class="bg-white rounded-lg p-4 shadow-md border border-gray-200 flex">
-    <!-- Left Side (Logo and Mini Details) -->
-    <div class="flex-shrink-0 mr-4">
-      <!-- Logo (You can replace 'company-logo-2.png' with the actual URL) -->
-      <img
-        src="company-logo-2.png"
-        alt="Company Logo 2"
-        class="w-16 h-16 rounded-full object-cover"
-      />
-    </div>
-    <div class="flex-grow">
-      <h2 class="text-lg font-semibold text-gray-800">Job Title 2</h2>
-      <p class="text-gray-600">Company Name 2</p>
-      <p class="text-gray-600">Location: Remote</p>
-      <p class="text-gray-600">Part-time</p>
-      <p class="text-gray-600">Job Level: Entry-level</p>
-      <p class="text-gray-600">Salary Range: $40,000 - $60,000</p>
-      <p class="text-gray-600">Application Deadline: February 15, 2024</p>
-      <!-- Add more mini details here as needed -->
-    </div>
-    <!-- Right Side (Apply Button) -->
-    <div class="flex-shrink-0 flex justify-center items-center">
-      <button
-        class="bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-slate transition-colors duration-300 focus:outline-none focus:shadow-outline-blue active:bg-slate"
-        type="button">
-        Apply Now
-      </button>
-    </div>
-  </div>
+const jobResults = [
+  {
+    logoSrc: "CompanyLogo",
+    title: "Software Engineer",
+    companyName: "Tech Co.",
+    postingDate: "October 1, 2023",
+    location: "San Francisco, CA",
+    typeLevel: "Full-time • Senior",
+    applyLink: "https://example.com/job1",
+  },
+];
+---
 
-  <!-- Add more job listings as needed -->
+<!-- Render the job results using the JobResultCard component -->
+<div class="grid md:grid-cols-2 gap-4">
+  <!-- Map over the jobResults array and render the cards -->
+  {
+    jobResults.map((job, index) => (
+      <>
+        <ResultCard
+          logoSrc={Logo.src}
+          title={job.title}
+          companyName={job.companyName}
+          postingDate={job.postingDate}
+          location={job.location}
+          typeLevel={job.typeLevel}
+          key={index}
+        />
+        <ResultCard
+          logoSrc={Logo.src}
+          title={job.title}
+          companyName={job.companyName}
+          postingDate={job.postingDate}
+          location={job.location}
+          typeLevel={job.typeLevel}
+          key={index}
+        />
+      </>
+      <ResultCard
+          logoSrc={Logo.src}
+          title={job.title}
+          companyName={job.companyName}
+          postingDate={job.postingDate}
+          location={job.location}
+          typeLevel={job.typeLevel}
+          key={index}
+        />
+        <ResultCard
+          logoSrc={Logo.src}
+          title={job.title}
+          companyName={job.companyName}
+          postingDate={job.postingDate}
+          location={job.location}
+          typeLevel={job.typeLevel}
+          key={index}
+        />
+      </>
+    ))
+  }
 </div>
