@@ -1,0 +1,31 @@
+---
+import ResultCard from "./ui/resultCard.astro";
+import Logo from "@assets/sales.png";
+
+const jobResults = [
+  {
+    logoSrc: Logo.src,
+    title: "Software Engineer",
+    companyName: "Tech Co.",
+    location: "San Francisco, CA",
+    jobType: "Full-time • Senior",
+    applyLink: "#",
+    salary: "200 USD",
+  },
+  {
+    logoSrc: Logo.src,
+    title: "Software Engineer",
+    companyName: "Tech Co.",
+    location: "San Francisco, CA",
+    jobType: "Full-time",
+    applyLink: "#",
+    salary: "200 USD",
+  },
+];
+---
+
+<!-- Render the job results using the JobResultCard component -->
+<div class="grid md:grid-cols-2 gap-4">
+  <!-- Map over the jobResults array and render the cards -->
+  {jobResults.map((job, index) => <ResultCard {...job} key={index} />)}
+</div>

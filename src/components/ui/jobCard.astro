@@ -8,20 +8,31 @@ interface Props {
   company: string;
   location: string;
   applyLink: string;
+  salary: string;
+  jobType: string;
+  key: any;
 }
 
-const { imageSrc, altText, title, company, location, applyLink }: Props =
-  Astro.props;
+const {
+  imageSrc,
+  altText,
+  title,
+  company,
+  location,
+  applyLink,
+  salary,
+  jobType,
+}: Props = Astro.props;
 
 const sizes = {
   lg: "w-full h-32 object-cover rounded-t-lg",
 };
 
 const cardStyles = {
-  card: "relative bg-white rounded-lg shadow-lg group overflow-hidden",
-  text: "text-lg font-semibold text-gray-800 mb-2",
-  companyLocation: "text-sm text-gray-600 mb-2",
-  location: "text-sm text-gray-600",
+  card: "relative bg-white rounded-lg group overflow-hidden antialiased",
+  text: "col-span-2 text-lg font-semibold text-gray-800 mb-2",
+  company: "text-sm text-gray-700",
+  location: "text-sm text-gray-700",
   applyButtonContainer:
     "absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity group-hover:opacity-100",
   applyButton:
@@ -31,10 +42,12 @@ const cardStyles = {
 
 <div class={cardStyles.card}>
   <img src={imageSrc} alt={altText} class={sizes.lg} />
-  <div class="p-4">
+  <div class="p-4 grid grid-cols-2 gap-2">
     <h3 class={cardStyles.text}>{title}</h3>
-    <p class={cardStyles.companyLocation}>{company}</p>
-    <p class={cardStyles.location}>{location}</p>
+    <p class={cardStyles.company}>🏢{company}</p>
+    <p class={cardStyles.location}>💰{salary}</p>
+    <p class={cardStyles.location}>📍{location}</p>
+    <p class={cardStyles.location}>⏳{jobType}</p>
   </div>
   <!-- Apply Button -->
   <div class={cardStyles.applyButtonContainer}>

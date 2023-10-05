@@ -4,6 +4,29 @@ import JobCard from "./ui/jobCard.astro";
 import Link from "./ui/link.astro";
 import jobImg1 from "@assets/sales.png";
 import jobImg2 from "@assets/sales2.jpeg";
+
+const featuredJobs = [
+  {
+    imageSrc: jobImg1.src,
+    altText: "Job 1",
+    title: "Frontend Engineer",
+    company: "Melkins",
+    location: "Remote",
+    applyLink: "#apply-link-1",
+    jobType: "Full-time",
+    salary: "9000 USD",
+  },
+  {
+    imageSrc: jobImg2.src,
+    altText: "Job 2",
+    title: "Frontend Engineer",
+    company: "Melkins",
+    location: "Remote",
+    applyLink: "#apply-link-2",
+    jobType: "Full-time",
+    salary: "9000 USD",
+  },
+];
 ---
 
 <div class="bg-black py-12 px-4 rounded-lg mb-16 md:mb-20">
@@ -17,24 +40,7 @@ import jobImg2 from "@assets/sales2.jpeg";
 
     <!-- Job Card Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Featured Job Card 1 -->
-      <JobCard
-        imageSrc={jobImg1.src}
-        altText="Job 1"
-        title="Frontend Engineer"
-        company="Melkins"
-        location="Remote"
-        applyLink="#apply-link-1"
-      />
-
-      <JobCard
-        imageSrc={jobImg2.src}
-        altText="Job 1"
-        title="Frontend Engineer"
-        company="Melkins"
-        location="Remote"
-        applyLink="#apply-link-1"
-      />
+      {featuredJobs.map((job, index) => <JobCard {...job} key={index} />)}
     </div>
   </div>
 </div>

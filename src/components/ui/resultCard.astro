@@ -1,36 +1,38 @@
 ---
 import { Icon } from "astro-icon";
+import Link from "./link.astro";
 
-interface JobResultProps {
+interface Props {
   logoSrc: string;
   title: string;
   companyName: string;
-  postingDate: string;
   location: string;
-  typeLevel: string;
+  jobType: string;
   applyLink: string;
+  salary: string;
+  key: any;
 }
 
 const {
   logoSrc,
   title,
   companyName,
-  postingDate,
   location,
-  typeLevel,
+  jobType,
   applyLink,
-}: JobResultProps = Astro.props;
+  salary,
+}: Props = Astro.props;
 
 const cardStyles = {
-  card: "flex flex-col md:flex-row bg-white rounded-lg mb-4 p-4 border border border-gray-100",
+  card: "flex flex-col md:flex-row bg-white rounded-lg mb-4 p-4 border border border-gray-100 hover:shadow-md",
   logo: "flex md:self-center relative w-16 h-16 object-contain mr-4 rounded-xl",
   content: "flex-grow",
   title: "text-lg font-semibold text-gray-800 mt-1 mb-1",
   info: "text-sm text-gray-600 mb-1",
   applyButtonContainer:
-    "flex md:self-center bg-black transition-opacity group-hover:opacity-100 rounded-sm",
+    "flex md:self-center bg-black transition-opacity group-hover:opacity-100 rounded-md hover:bg-white hover:border-2",
   applyButton:
-    "text-white font-medium hover:underline text-sm justify-center flex  flex-grow items-center p-2",
+    "text-white font-medium hover:underline hover:text-black text-sm flex p-2 mx-auto",
 };
 ---
 
@@ -41,10 +43,10 @@ const cardStyles = {
   <div class={cardStyles.content}>
     <h3 class={cardStyles.title}>{title}</h3>
     <p class={cardStyles.info}>
-      {companyName} • {postingDate}
+      {companyName} • {jobType}
     </p>
     <p class={cardStyles.info}>
-      {location} • {typeLevel}
+      {location} • {salary}
     </p>
   </div>
   <!-- Apply Button -->
