@@ -18,9 +18,7 @@ const resolvedImageWithDomain = new URL(
 
 const { title } = Astro.props;
 
-const makeTitle = title
-  ? title + " | " + "Globely"
-  : "Your desired job in view.";
+const makeTitle = title ? title + " | " + "Your desired job in view." : "";
 ---
 
 <!DOCTYPE html>
